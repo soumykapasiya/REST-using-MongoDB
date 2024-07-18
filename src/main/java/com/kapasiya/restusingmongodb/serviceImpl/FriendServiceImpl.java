@@ -24,9 +24,6 @@ public class FriendServiceImpl implements FriendService
     @Override
     public List<Friend> addFriend(Friend friend)
     {
-        System.out.println(friend.getEmail());
-        System.out.println(friend.getName());
-        System.out.println(friend.getPhone());
         friend.setId(UUID.randomUUID().toString().split("-")[0]);
         friendRepository.save(friend);
         return friendRepository.findAll();
@@ -44,7 +41,6 @@ public class FriendServiceImpl implements FriendService
     {
 
         Friend friendData = friendRepository.findById(friend.getId()).orElse(null);
-
         if(friendData != null)
         {
             friendData.setName(friend.getName());

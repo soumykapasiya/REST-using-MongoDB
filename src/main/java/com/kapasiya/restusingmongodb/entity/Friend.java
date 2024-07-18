@@ -8,10 +8,11 @@ import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("friends")
+@Document
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Friend
 {
     @Id
